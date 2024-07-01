@@ -15,7 +15,7 @@ body, html {
 }
 
 .falling-element {
-    position: fixed;
+    position: absolute;
     width: 20px;
     height: 20px;
     background-color: white;
