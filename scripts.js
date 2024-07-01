@@ -29,7 +29,9 @@ function pileUpElement(element) {
     let left = parseInt(window.getComputedStyle(element).left);
     if (left < window.innerWidth / 2) {
         element.style.left = '0px';
+        element.style.top = `${Math.random() * (window.innerHeight - 20)}px`;
     } else {
         element.style.left = `${window.innerWidth - 20}px`;
+        element.style.top = `${Math.random() * (window.innerHeight - 20)}px`;
     }
 }
