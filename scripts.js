@@ -20,17 +20,6 @@ function createFallingElement(scrollPosition) {
             element.style.top = `${top + 5}px`;
         } else {
             clearInterval(fallInterval);
-            pileUpElement(element, scrollPosition);
         }
     }, 20);
-}
-
-function pileUpElement(element, scrollPosition) {
-    let left = parseInt(window.getComputedStyle(element).left);
-    element.style.top = `${scrollPosition + window.innerHeight - 20}px`; // Pile up at the bottom
-    if (left < window.innerWidth / 2) {
-        element.style.left = '0px';
-    } else {
-        element.style.left = `${window.innerWidth - 20}px`;
-    }
 }
