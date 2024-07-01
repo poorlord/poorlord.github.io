@@ -55,12 +55,12 @@ window.addEventListener('scroll', function() {
     }
 
     // Update ground position to be at the bottom of the viewport
-    Matter.Body.setPosition(ground, { x: window.innerWidth / 2, y: scrollPosition + window.innerHeight });
+    Matter.Body.setPosition(ground, { x: window.innerWidth / 2, y: scrollPosition + window.innerHeight + 10 });
 });
 
 function createFallingElement(scrollPosition) {
     let x = Math.random() * window.innerWidth;
-    let y = scrollPosition - window.innerHeight; // Start above the viewport based on scroll position
+    let y = scrollPosition - 20; // Start above the viewport based on scroll position
 
     console.log('Creating element at:', x, y);
 
