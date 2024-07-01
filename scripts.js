@@ -24,8 +24,8 @@ Render.run(render);
 const runner = Runner.create();
 Runner.run(runner, engine);
 
-// Add ground
-let ground = Bodies.rectangle(window.innerWidth / 2, window.innerHeight + 20, window.innerWidth, 20, {
+// Add invisible ground
+let ground = Bodies.rectangle(window.innerWidth / 2, window.innerHeight, window.innerWidth, 20, {
     isStatic: true,
     render: {
         visible: false // Make the ground invisible
@@ -37,31 +37,30 @@ World.add(world, ground);
 const leftWall = Bodies.rectangle(0, window.innerHeight / 2, 20, window.innerHeight, {
     isStatic: true,
     render: {
-        visible: false // Make the walls invisible
+        visible: false // Make the wall invisible
     }
 });
 const rightWall = Bodies.rectangle(window.innerWidth, window.innerHeight / 2, 20, window.innerHeight, {
     isStatic: true,
     render: {
-        visible: false // Make the walls invisible
+        visible: false // Make the wall invisible
     }
 });
 World.add(world, [leftWall, rightWall]);
 
 window.addEventListener('scroll', function() {
     let scrollPosition = window.pageYOffset;
-
-    // Move the ground down as you scroll
-    Matter.Body.setPosition(ground, { x: window.innerWidth / 2, y: window.innerHeight + scrollPosition + 20 });
-
     if (scrollPosition % 100 === 0) { // Adjust this value to control the frequency of falling elements
         createFallingElement(scrollPosition);
     }
+
+    // Update ground position to be at the bottom of the viewport
+    Matter.Body.setPosition(ground, { x: window.innerWidth / 2, y: scrollPosition + window.innerHeight });
 });
 
 function createFallingElement(scrollPosition) {
     let x = Math.random() * window.innerWidth;
-    let y = scrollPosition - 20; // Start above the current scroll position
+    let y = scrollPosition - window.innerHeight; // Start above the viewport based on scroll position
 
     console.log('Creating element at:', x, y);
 
@@ -83,7 +82,7 @@ window.addEventListener('resize', function() {
         max: { x: window.innerWidth, y: window.innerHeight }
     });
 
-    Matter.Body.setPosition(ground, { x: window.innerWidth / 2, y: window.innerHeight + window.pageYOffset + 20 });
+    Matter.Body.setPosition(ground, { x: window.innerWidth / 2, y: window.innerHeight });
     Matter.Body.setPosition(leftWall, { x: 0, y: window.innerHeight / 2 });
     Matter.Body.setPosition(rightWall, { x: window.innerWidth, y: window.innerHeight / 2 });
 
