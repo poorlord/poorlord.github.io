@@ -87,4 +87,3 @@ window.addEventListener('resize', function() {
     ground.bounds.max.x = window.innerWidth;
     rightWall.bounds.max.y = window.innerHeight;
 });
-
