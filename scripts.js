@@ -1,7 +1,8 @@
 /* scripts.js */
 window.addEventListener('scroll', function() {
     let scrollPosition = window.pageYOffset;
-    if (scrollPosition % 100 === 0) { // Adjust this value to control the frequency of falling elements
+    console.log('Scroll position:', scrollPosition);
+    if (scrollPosition % 100 === 0) {
         createFallingElement();
     }
 });
@@ -11,16 +12,19 @@ function createFallingElement() {
     element.className = 'falling-element';
     element.style.left = `${Math.random() * window.innerWidth}px`;
     element.style.top = '0px';
+    console.log('Created element at:', element.style.left, element.style.top);
 
     document.body.appendChild(element);
 
     let fallInterval = setInterval(function() {
         let top = parseInt(window.getComputedStyle(element).top);
+        console.log('Element top:', top);
         if (top < window.innerHeight - 20) {
             element.style.top = `${top + 5}px`;
         } else {
             clearInterval(fallInterval);
-            // No need to adjust left or top anymore, element stays where it lands
+            element.style.top = `${window.innerHeight - 20}px`;
+            console.log('Element settled at:', element.style.left, element.style.top);
         }
     }, 20);
 }
