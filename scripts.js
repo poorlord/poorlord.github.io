@@ -28,7 +28,7 @@ Runner.run(runner, engine);
 const ground = Bodies.rectangle(window.innerWidth / 2, window.innerHeight, window.innerWidth, 20, {
     isStatic: true,
     render: {
-        visible: true, // Change to true to verify the ground
+        visible: true,
         fillStyle: 'white'
     }
 });
@@ -38,14 +38,14 @@ World.add(world, ground);
 const leftWall = Bodies.rectangle(0, window.innerHeight / 2, 20, window.innerHeight, {
     isStatic: true,
     render: {
-        visible: true, // Change to true to verify the wall
+        visible: true,
         fillStyle: 'white'
     }
 });
 const rightWall = Bodies.rectangle(window.innerWidth, window.innerHeight / 2, 20, window.innerHeight, {
     isStatic: true,
     render: {
-        visible: true, // Change to true to verify the wall
+        visible: true,
         fillStyle: 'white'
     }
 });
@@ -67,11 +67,7 @@ function createFallingElement() {
     // Create a Matter.js body for the falling element
     let element = Bodies.circle(x, y, 10, {
         render: {
-            sprite: {
-                texture: 'images/your-image.png', // Path to your image
-                xScale: 0.5, // Adjust scaling if necessary
-                yScale: 0.5
-            }
+            fillStyle: 'red' // Use a simple color for demonstration
         }
     });
 
