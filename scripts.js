@@ -1,4 +1,4 @@
-/* scripts.js */
+console.log('Matter.js loaded:', Matter);
 
 // Create a Matter.js engine
 const { Engine, Render, Runner, Bodies, Composite, World, Events } = Matter;
@@ -28,7 +28,8 @@ Runner.run(runner, engine);
 const ground = Bodies.rectangle(window.innerWidth / 2, window.innerHeight, window.innerWidth, 20, {
     isStatic: true,
     render: {
-        visible: false
+        visible: true, // Change to true to verify the ground
+        fillStyle: 'white'
     }
 });
 World.add(world, ground);
@@ -37,13 +38,15 @@ World.add(world, ground);
 const leftWall = Bodies.rectangle(0, window.innerHeight / 2, 20, window.innerHeight, {
     isStatic: true,
     render: {
-        visible: false
+        visible: true, // Change to true to verify the wall
+        fillStyle: 'white'
     }
 });
 const rightWall = Bodies.rectangle(window.innerWidth, window.innerHeight / 2, 20, window.innerHeight, {
     isStatic: true,
     render: {
-        visible: false
+        visible: true, // Change to true to verify the wall
+        fillStyle: 'white'
     }
 });
 World.add(world, [leftWall, rightWall]);
@@ -59,6 +62,8 @@ function createFallingElement() {
     let x = Math.random() * window.innerWidth;
     let y = -20; // Start above the viewport
 
+    console.log('Creating element at:', x, y);
+
     // Create a Matter.js body for the falling element
     let element = Bodies.circle(x, y, 10, {
         render: {
@@ -71,6 +76,7 @@ function createFallingElement() {
     });
 
     World.add(world, element);
+    console.log('Element added:', element);
 }
 
 // Handle window resize
