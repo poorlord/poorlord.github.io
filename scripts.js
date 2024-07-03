@@ -25,21 +25,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const ground = Bodies.rectangle(window.innerWidth / 2, window.innerHeight - 10, window.innerWidth, 20, {
         isStatic: true,
         render: {
-            fillStyle: 'white'
+            visible: false // Make the ground invisible
         }
     });
-
     World.add(world, ground);
 
     function createFallingElement() {
-        let x = Math.random() * window.innerWidth;
-        let y = -20; 
+        const x = Math.random() * window.innerWidth;
+        const y = -20; // Start above the viewport
 
         console.log('Creating element at:', x, y);
 
         const element = Bodies.circle(x, y, 10, {
             render: {
-                fillStyle: 'red' 
+                fillStyle: 'red' // Use a simple color for demonstration
             }
         });
 
@@ -50,29 +49,21 @@ document.addEventListener('DOMContentLoaded', () => {
     createFallingElement();
     setInterval(createFallingElement, 1000);
 
-    let resizeTimeout;
     function handleResize() {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            Render.lookAt(render, {
-                min: { x: 0, y: 0 },
-                max: { x: window.innerWidth, y: window.innerHeight }
-            });
+        Render.lookAt(render, {
+            min: { x: 0, y: 0 },
+            max: { x: window.innerWidth, y: window.innerHeight }
+        });
 
-            Matter.Body.setPosition(ground, { x: window.innerWidth / 2, y: window.innerHeight - 10 });
-            ground.bounds.max.x = window.innerWidth;
-        }, 200);
+        Matter.Body.setPosition(ground, { x: window.innerWidth / 2, y: window.innerHeight - 10 });
+        ground.bounds.max.x = window.innerWidth;
     }
 
     window.addEventListener('resize', handleResize);
 
-    let scrollTimeout;
     function handleScroll() {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-            let scrollPosition = window.pageYOffset;
-            Matter.Body.setPosition(ground, { x: window.innerWidth / 2, y: scrollPosition + window.innerHeight - 10 });
-        }, 50);
+        const scrollPosition = window.pageYOffset;
+        Matter.Body.setPosition(ground, { x: window.innerWidth / 2, y: scrollPosition + window.innerHeight - 10 });
     }
 
     window.addEventListener('scroll', handleScroll);
