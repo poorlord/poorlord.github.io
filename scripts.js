@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     Runner.run(runner, engine);
 
     // Add invisible ground
-    let ground = Bodies.rectangle(window.innerWidth / 2, window.innerHeight + 10, window.innerWidth, 20, {
+    let ground = Bodies.rectangle(window.innerWidth / 2, window.innerHeight, window.innerWidth, 20, {
         isStatic: true,
         render: {
             visible: false // Make the ground invisible
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Update ground position to be at the bottom of the viewport
-        Matter.Body.setPosition(ground, { x: window.innerWidth / 2, y: scrollPosition + window.innerHeight + 10 });
+        Matter.Body.setPosition(ground, { x: window.innerWidth / 2, y: scrollPosition + window.innerHeight });
     });
 
     function createFallingElement(scrollPosition) {
@@ -72,6 +72,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // Add collision event
+        Events.on(engine, 'collisionStart', function(event) {
+            event.pairs.forEach(pair => {
+                if (pair.bodyA === ground || pair.bodyB === ground) {
+                    console.log('Collision with ground detected:', pair);
+                }
+            });
+        });
+
         World.add(world, element);
         console.log('Element added:', element);
     }
@@ -83,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             max: { x: window.innerWidth, y: window.innerHeight }
         });
 
-        Matter.Body.setPosition(ground, { x: window.innerWidth / 2, y: window.innerHeight + 10 });
+        Matter.Body.setPosition(ground, { x: window.innerWidth / 2, y: window.innerHeight });
         Matter.Body.setPosition(leftWall, { x: 0, y: window.innerHeight / 2 });
         Matter.Body.setPosition(rightWall, { x: window.innerWidth, y: window.innerHeight / 2 });
 
