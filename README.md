@@ -1,1 +1,0 @@
-# poorlord.github.io
