@@ -1,0 +1,24 @@
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 200%;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.content-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.falling-element {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 1000;
+}
