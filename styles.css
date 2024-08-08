@@ -1,24 +1,29 @@
 /* styles.css */
-body, html {
+
+body {
     margin: 0;
-    padding: 0;
-    height: 200%;
-    background-color: black;
-    color: white;
     font-family: Arial, sans-serif;
-    overflow-x: hidden;
 }
 
-.content-section {
-    padding: 20px;
-    text-align: center;
-}
-
-.falling-element {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    border-radius: 50%;
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 1000;
+}
+
+#eye-icon {
+    width: 100px; /* Adjust size as needed */
+    cursor: pointer;
+}
+
+#main-content {
+    display: none; /* Hidden initially */
+    padding: 20px;
 }
