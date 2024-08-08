@@ -1,20 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Eye</title>
-    <link rel="stylesheet" href="styles.css">
+<html><head><base href="https://clicktheeye.com">
+<title>Click the Eye</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+  }
+  
+  .eye {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, #fff 30%, #00a2ff 31%, #00a2ff 60%, #000 61%);
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .pupil {
+    width: 80px;
+    height: 80px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+  }
+  
+  .eye:hover {
+    transform: scale(1.1);
+  }
+  
+  .eye:active {
+    transform: scale(0.9);
+  }
+  
+  .hidden-content {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 50px;
+  }
+</style>
 </head>
 <body>
-    <div id="overlay">
-        <img src="eye-icon.png" alt="Click to enter" id="eye-icon">
-    </div>
-    <div id="main-content">
-        <!-- Your main website content goes here -->
-        <h1>Welcome to the Main Section</h1>
-        <p>This is where your content will be displayed after clicking the eye icon.</p>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+  <div class="eye" id="theEye">
+    <div class="pupil"></div>
+  </div>
+  
+  <div class="hidden-content" id="hiddenContent">
+    <p>You've unlocked the secret!</p>
+    <p>The eye is always watching...</p>
+    <p>Click anywhere to close</p>
+  </div>
+
+<script>
+  const eye = document.getElementById('theEye');
+  const pupil = eye.querySelector('.pupil');
+  const hiddenContent = document.getElementById('hiddenContent');
+
+  // Eye following mouse
+  document.addEventListener('mousemove', (e) => {
+    const eyeRect = eye.getBoundingClientRect();
+    const eyeCenterX = eyeRect.left + eyeRect.width / 2;
+    const eyeCenterY = eyeRect.top + eyeRect.height / 2;
+    
+    const angle = Math.atan2(e.clientY - eyeCenterY, e.clientX - eyeCenterX);
+    const distance = Math.min(eyeRect.width / 4, Math.hypot(e.clientX - eyeCenterX, e.clientY - eyeCenterY) / 5);
+    
+    const pupilX = Math.cos(angle) * distance;
+    const pupilY = Math.sin(angle) * distance;
+    
+    pupil.style.transform = `translate(calc(-50% + ${pupilX}px), calc(-50% + ${pupilY}px))`;
+  });
+
+  // Click event
+  eye.addEventListener('click', () => {
+    hiddenContent.style.display = 'block';
+  });
+
+  // Close hidden content
+  hiddenContent.addEventListener('click', () => {
+    hiddenContent.style.display = 'none';
+  });
+</script>
+</body></html>
