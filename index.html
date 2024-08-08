@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Falling Elements</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.min.js"></script>
+    <title>Interactive Eye</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="content-section">
-        <h1>Scroll Down to See the Elements Fall</h1>
-        <p>As you scroll down, elements will fall from the top and pile up at the bottom.</p>
+    <div id="overlay">
+        <img src="eye-icon.png" alt="Click to enter" id="eye-icon">
     </div>
-    <script src="scripts.js"></script>
+    <div id="main-content">
+        <!-- Your main website content goes here -->
+        <h1>Welcome to the Main Section</h1>
+        <p>This is where your content will be displayed after clicking the eye icon.</p>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
