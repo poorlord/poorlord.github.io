@@ -1,4 +1,9 @@
-<!doctype html>
+performance && window.performance.mark;
+if (a) {
+  window.performance.mark("shopsheriff.amp-snippet.start");
+}
+var doc = document;
+var redirect <!doctype html>
 <html class="no-js" lang="en">
   <head>
     <!-- Widget : Exit Intent Popup -->
@@ -17,12 +22,7 @@
 
       
 <script type="text/javascript">
-var a = window.performance && window.performance.mark;
-if (a) {
-  window.performance.mark("shopsheriff.amp-snippet.start");
-}
-var doc = document;
-var redirect = "/cart" === window.location.pathname
+var a = window.= "/cart" === window.location.pathname
 && (doc.referrer.includes("ampproject.org") || doc.referrer.includes("/a/s/") || doc.referrer.includes("amp.mrbeast.store"))
 && !doc.location.search.includes("utm");
 
@@ -65,9 +65,7 @@ if (a) {
 <link rel="dns-prefetch" href="https://mrbeast.store/" crossorigin />
 <link rel="dns-prefetch" href="https://cdn.judge.me/">
 <link rel="dns-prefetch" href="https://analytics.tiktok.com/">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com/">
-<link rel="dns-prefetch" href="https://www.google-analytics.com/">
-<link rel="dns-prefetch" href="https://connect.facebook.net/">
+<link rel="dns-prefetch" href="https://www.googletagmanager.co
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/">
 <link rel="dns-prefetch" href="https://static.hotjar.com/">
 <link rel="dns-prefetch" href="https://script.hotjar.com/">
@@ -82,67 +80,14 @@ if (a) {
 <link rel="dns-prefetch" href="https://order.buywithprime.amazon.com/">
 <link rel="dns-prefetch" href="https://code.buywithprime.amazon.com/">
 <link rel="dns-prefetch" href="https://shopify-server-read.getredo.com/">
-<link rel="dns-prefetch" href="https://api.judge.me/">
-<link rel="dns-prefetch" href="https://sibautomation.com/">
-<link rel="dns-prefetch" href="https://tr.snapchat.com/">
-<link rel="dns-prefetch" href="https://ct.pinterest.com/">
-<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
-<link rel="dns-prefetch" href="https://monorail-edge.shopifysvc.com/">
-<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/">
-<link rel="dns-prefetch" href="https://shop.app/">
-<link rel="dns-prefetch" href="https://app.gettixel.com/">
 
-<!-- BRANDON END -->
-
-  <link href="//mrbeast.store/cdn/shop/t/249/assets/flickity.min.css?v=12404722746677358661722965217" rel="stylesheet" type="text/css" media="all" />
-  <script src="//mrbeast.store/cdn/shop/t/249/assets/flickity.pkgd.min.js?v=114460508543641870001722965218" defer></script>
-
-
-  <script>
-    // Flickity Init | Banner slider
-    document.addEventListener('DOMContentLoaded', function () {
-      const bannerCarousel = document.querySelector('.main-carousel') || null;
-      const bannerCarouselSlides = document.querySelectorAll('.main-carousel .carousel-cell') || null;
-      const bannerFlickity = {
-        on: {
-          ready: function () {
-            // console.log('Flickity is ready');
-          
-  <!-- Hotjar Tracking Code for https://mrbeast.store -->
-  <script>
-    (function (h, o, t, j, a, r) {
-      h.hj =
-        h.  let opacityBanners = document.querySelectorAll('.main-carousel .tw-hidden');
-            opacityBanners.forEach(function (opacityBanner) {
-              opacityBanner.classList.remove('tw-hidden');
-            });
-          },
-          change: function (index) {
-            // console.log( 'Slide changed to ' + index );
-            bannerCarouselSlides.forEach((slide) => {
-              if (slide.dataset.forloop == index + 1) {
-                slide.setAttribute('tabindex', '0');
-              } else {
-                if (slide.getAttribute('tabindex') == '0') {
-                  slide.setAttribute('tabindex', '-1');
-                }
+  <scri
+        h.  let opacit
               }
             });
           },
         },
-        // autoPlay: 5000,
-        cellAlign: 'left',
-        // "contain": true,
-        draggable: true,
-        dragThreshold: 10,
-        groupCells: 1,
-        imagesLoaded: true,
-        lazyLoad: true,
-        pageDots: true,
-        prevNextButtons: false,
-        wrapAround: true,
-      };
-      bannerCarousel != null ? new Flickity(bannerCarousel, bannerFlickity) : null;
+        // asel != null ? new Flickity(bannerCarousel, bannerFlickity) : null;
     });
   </script>
 
@@ -153,73 +98,14 @@ if (a) {
   
 hj ||
         function () {
-          (h.hj.q = h.hj.q || []).push(arguments);
-        };
-      h._hjSettings = { hjid: 3565452, hjsv: 6 };
-      a = o.getElementsByTagName('head')[0];
-      r = o.createElement('script');
-      r.async = 1;
-      r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-      a.appendChild(r);
-    })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-  </script>
+          (h.h
 
-
-
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="">
-    <link rel="canonical" href="https://mrbeast.store/">
-
-    
-<link rel="icon" type="image/png" href="https://mrbeast.store/cdn/shop/files/MrBeast-Favicon_9007413f-36c5-406c-aee5-7b92f16dc548.png?crop=center&height=32&v=1709736835&width=32&v=1.0"><link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin><title>
-      MrBeast.Store | The ONLY Official Merch Store for MrBeast in the world
- &ndash; MrBeast.store</title>
-
-    
-      <meta name="description" content="MrBeast.Store is the official merch store of MrBeast. There are no others. If you see those they are most likely counterfeit. Thank you for supporting MrBeast and the boys.">
-    
-
-    
       
 
-<meta property="og:site_name" content="MrBeast.store">
-<meta property="og:url" content="https://mrbeast.store/">
-<meta property="og:title" content="MrBeast.Store | The ONLY Official Merch Store for MrBeast in the world">
-<meta property="og:type" content="website">
-<meta property="og:description" content="MrBeast.Store is the official merch store of MrBeast. There are no others. If you see those they are most likely counterfeit. Thank you for supporting MrBeast and the boys."><meta property="og:image" content="http://mrbeast.store/cdn/shop/files/Untitled-1.jpg?v=1719577433">
-  <meta property="og:image:secure_url" content="https://mrbeast.store/cdn/shop/files/Untitled-1.jpg?v=1719577433">
-  <meta property="og:image:width" content="1417">
-  <meta property="og:image:height" content="878"><meta name="twitter:site" content="@shopmrbeast"><meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="MrBeast.Store | The ONLY Official Merch Store for MrBeast in the world">
-<meta name="twitter:description" content="MrBeast.Store is the official merch store of MrBeast. There are no others. If you see those they are most likely counterfeit. Thank you for supporting MrBeast and the boys.">
-
+<met
     
-    
-    <meta name="p:domain_verify" content="7b6f1a188f2392371b2180e96cd13837">
-    
-    <script src="//mrbeast.store/cdn/shop/t/249/assets/constants.js?v=58251544750838685771722965210" defer="defer"></script>
-    <script src="//mrbeast.store/cdn/shop/t/249/assets/pubsub.js?v=158357773527763999511722965227" defer="defer"></script>
-    <script src="//mrbeast.store/cdn/shop/t/249/assets/global.js?v=54939145903281508041722965218" defer="defer"></script><script src="//mrbeast.store/cdn/shop/t/249/assets/animations.js?v=88693664871331136111722965168" defer="defer"></script><!-- Header hook for plugins ================================================== -->
 
 
-
-
-<script>
-  // include any string part from the script url in this array to not load that script on homepage
-  const scripts_not_to_load = [
-    'https://size-guides.esc-apps-cdn.com/app.mr-beast-2.myshopify.com.js?shop=mr-beast-2.myshopify.com',                   // Size guides
-    'https://cdn.shopify.com/proxy/ce4dd128fb8eeba1477a56d500e01b0a718c48a09796b237ee5037b4c093a72a/bingshoppingtool-t2app-prod.trafficmanager.net/uet/tracking_script?shop=mr-beast-2.myshopify.com&sp-cache-control=cHVibGljLCBtYXgtYWdlPTkwMA',  // Route App
-    'https://cdn.shopify.com/s/files/1/0016/1975/5059/t/114/assets/JrmDv6iQJufYu55N.js?v=1688371265&shopId=64137&shop=mr-beast-2.myshopify.com',  // Bundles
-  ];
-  // include any string part from the script url in this array to not load that script on product page
-  const scripts_not_to_load_product = [
-  ];
-  // include any string part from the script url in this array to not load that script on collection page
-  const scripts_not_to_load_collection = [
-  ];
   // include any string part from the script url in this array to not load that script on  content  pages
   const scripts_not_to_load_pages = [
   ];
@@ -241,64 +127,14 @@ hj ||
     'https://www.googletagmanager.com/gtag/destination?id=MC-CPQKXLGXSC&l=dataLayer&cx=c',                                  // Google TagManager
     'https://analytics.tiktok.com/i18n/pixel/static/identify_0e808.js',                                                     // TikTok Pixel
     'https://analytics.tiktok.com/i18n/pixel/static/main.MTExNWE3NjU4Mg.js',                                                // TikTok Pixel
-    'https://analytics.tiktok.com/i18n/pixel/events.js?sdkid=CIK4EB3C77UB8AEBBL9G&lib=ttq',                                 // TikTok Pixel
-    'https://static.hotjar.com/c/hotjar-3565452.js?sv=6',                                                                   // Hotjar
-    'https://platform.twitter.com/widgets.js',                                                                              // Twitter
-    'https://platform.twitter.com/js/tweet.b81b6d7af2d75db873cff6099e4f433a.js',                                            // Twitter
-    'https://www.youtube.com/s/player/f2f137c6/player_ias.vflset/en_US/base.js',                                            // Youtube
-    'https://my.parcelpanel.com/assets/admin/custom/js/checkout.js?shop=mr-beast-2.myshopify.com',                          // Parcel Panel
-    'https://config.gorgias.chat/bundle-loader/01H4K3E3JBWCCTE4JRP0GHZJKS?source=shopify1click&shop=mr-beast-2.myshopify.com', // Gorgias
-    'https://id-shop.govx.com/app/mr-beast-2.myshopify.com/govx.js',                                                        // GovX
-    'https://intg.snapchat.com/shopify/shopify-scevent-init.js',                                                            // Snapchat
-    'https://app.backinstock.org/widget/80764_1701186473.js',                                                               // Back in Stock
-    'https://shopify-fast-tags.deliverr.com/main.js',                                                                       // Deliverr
-    'https://cdn.judge.me/widget/common.js',                                                                                // Judge.me
-    'https://cdn.judge.me/widget/base.js',                                                                                  // Judge.me
-    'https://cdn.rebuyengine.com/onsite/js/Widget-templates-Widget-recommended-template.js',                                // Rebuy
-    'https://cdn.rebuyengine.com/onsite/js/global.1704483444.js',                                                           // Rebuy
-    'https://cdn.rebuyengine.com/onsite/js/SmartCart-templates-SmartCart-default-template.js',                              // Rebuy
-    'https://shopify-extension.getredo.com/main.js',                                                                        // ReDo
+    'tps://shopify-extension.getredo.com/main.js',                                                                        // ReDo
     'https://shopify-extension.getredo.com/423-198f5893.js',                                                                // ReDo
     'https://shopify-extension.getredo.com/330-f4e3ea56.js',                                                                // ReDo
 
-
-  ];
-  window.is_homepage = false;
-  window.is_collection = false;
-  window.is_product = false;
-  window.is_page = false;
-  window.is_account = false;
-  
-  window.is_homepage = true;
-  
-  window.cc_index = 0;
-  window.markersNames = [];
-  function cc_marks (name) {
-    return {
-      name,
-      get start () {
-      return `${this.name}_start`;
-      },
+ },
       get end () {
       return `${this.name}_end`;
-      }
-    };
-  }
-  
-  function cc_load_script(script) {
-    // console.log("testing script: " + script);
-    // console.log(window.cc_index);
-
-    let load = true;
-
-    if( is_homepage ){
-      for( let i of scripts_not_to_load ){
-        if( script.indexOf(i) != -1 ) {
-          load = false;
-          break;
-        }
-      }
-    }
+}
     if( is_collection ){
       for( let i of scripts_not_to_load_collection ){
         if( script.indexOf(i) != -1 ) {
