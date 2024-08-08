@@ -107,7 +107,12 @@ if (a) {
         on: {
           ready: function () {
             // console.log('Flickity is ready');
-            let opacityBanners = document.querySelectorAll('.main-carousel .tw-hidden');
+          
+  <!-- Hotjar Tracking Code for https://mrbeast.store -->
+  <script>
+    (function (h, o, t, j, a, r) {
+      h.hj =
+        h.  let opacityBanners = document.querySelectorAll('.main-carousel .tw-hidden');
             opacityBanners.forEach(function (opacityBanner) {
               opacityBanner.classList.remove('tw-hidden');
             });
@@ -146,12 +151,7 @@ if (a) {
   
   
   
-
-  <!-- Hotjar Tracking Code for https://mrbeast.store -->
-  <script>
-    (function (h, o, t, j, a, r) {
-      h.hj =
-        h.hj ||
+hj ||
         function () {
           (h.hj.q = h.hj.q || []).push(arguments);
         };
