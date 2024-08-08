@@ -1,102 +1,50 @@
-<html><head><base href="https://clicktheeye.com">
-<title>Click the Eye</title>
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #000;
-    overflow: hidden;
-  }
-  
-  .eye {
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, #fff 30%, #00a2ff 31%, #00a2ff 60%, #000 61%);
-    border-radius: 50%;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .pupil {
-    width: 80px;
-    height: 80px;
-    background-color: #000;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 0.3s ease;
-  }
-  
-  .eye:hover {
-    transform: scale(1.1);
-  }
-  
-  .eye:active {
-    transform: scale(0.9);
-  }
-  
-  .hidden-content {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 24px;
-    text-align: center;
-    padding-top: 50px;
-  }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click the Eye</title>
+    <meta name="description" content="Welcome to Click the Eye. Discover the hidden secrets within the eye of imagination.">
+    <meta property="og:title" content="Click the Eye">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:image" content="https://yourwebsite.com/images/eye.jpeg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@yourtwitterhandle">
+    <meta name="twitter:title" content="Click the Eye">
+    <meta name="twitter:image" content="https://yourwebsite.com/images/eye.jpeg">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="32x32">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="eye" id="theEye">
-    <div class="pupil"></div>
-  </div>
-  
-  <div class="hidden-content" id="hiddenContent">
-    <p>You've unlocked the secret!</p>
-    <p>The eye is always watching...</p>
-    <p>Click anywhere to close</p>
-  </div>
+    <header>
+        <h1>Click the Eye</h1>
+        <p>Discover the hidden secrets within the eye of imagination.</p>
+    </header>
 
-<script>
-  const eye = document.getElementById('theEye');
-  const pupil = eye.querySelector('.pupil');
-  const hiddenContent = document.getElementById('hiddenContent');
+    <main>
+        <section>
+            <h2>About</h2>
+            <p>Welcome to Click the Eye. Explore the mysteries and unlock the secrets hidden within the depths of creativity and imagination.</p>
+        </section>
 
-  // Eye following mouse
-  document.addEventListener('mousemove', (e) => {
-    const eyeRect = eye.getBoundingClientRect();
-    const eyeCenterX = eyeRect.left + eyeRect.width / 2;
-    const eyeCenterY = eyeRect.top + eyeRect.height / 2;
-    
-    const angle = Math.atan2(e.clientY - eyeCenterY, e.clientX - eyeCenterX);
-    const distance = Math.min(eyeRect.width / 4, Math.hypot(e.clientX - eyeCenterX, e.clientY - eyeCenterY) / 5);
-    
-    const pupilX = Math.cos(angle) * distance;
-    const pupilY = Math.sin(angle) * distance;
-    
-    pupil.style.transform = `translate(calc(-50% + ${pupilX}px), calc(-50% + ${pupilY}px))`;
-  });
+        <section>
+            <h2>Explore</h2>
+            <p>Click the eye and uncover a world beyond the ordinary.</p>
+            <button onclick="explore()">Click the Eye</button>
+        </section>
+    </main>
 
-  // Click event
-  eye.addEventListener('click', () => {
-    hiddenContent.style.display = 'block';
-  });
+    <footer>
+        <p>&copy; 2024 Click the Eye. All rights reserved.</p>
+        <p>Follow us on <a href="https://twitter.com/yourtwitterhandle">Twitter</a></p>
+    </footer>
 
-  // Close hidden content
-  hiddenContent.addEventListener('click', () => {
-    hiddenContent.style.display = 'none';
-  });
-</script>
-</body></html>
+    <script>
+        function explore() {
+            alert("The journey begins...");
+            // Add your exploration logic here
+        }
+    </script>
+</body>
+</html>
