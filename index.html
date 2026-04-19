@@ -1,113 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physics-Based Hand & Foot Fall Simulator</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background: #f0f0f0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        canvas {
-            background: #ffffff;
-            border: 2px solid #333;
-            display: block;
-            margin: 20px auto;
-        }
-
-        h1 {
-            color: #333;
-            margin: 10px;
-        }
-
-        button {
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poorlord</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header>
+    <h1>Poorlord</h1>
+    <p>Art, animation, and shop</p>
+  </header>
 
-    <h1>Physics-Based Hand & Foot Fall Simulator</h1>
-    <button onclick="startSimulation()">Start Simulation</button>
-    <canvas id="simulatorCanvas" width="800" height="600"></canvas>
-
-    <script>
-        const canvas = document.getElementById('simulatorCanvas');
-        const ctx = canvas.getContext('2d');
-
-        const gravity = 0.5;
-        const objects = [];
-
-        class FallingObject {
-            constructor(x, y, imageSrc) {
-                this.x = x;
-                this.y = y;
-                this.vx = Math.random() * 4 - 2; // Random horizontal speed
-                this.vy = Math.random() * 2 - 1; // Random vertical speed
-                this.image = new Image();
-                this.image.src = imageSrc;
-                this.image.onload = () => {
-                    this.width = this.image.width;
-                    this.height = this.image.height;
-                }
-            }
-
-            update() {
-                this.vy += gravity; // Apply gravity
-                this.x += this.vx;
-                this.y += this.vy;
-
-                // Bounce off the edges
-                if (this.x + this.width > canvas.width || this.x < 0) {
-                    this.vx = -this.vx;
-                }
-                if (this.y + this.height > canvas.height) {
-                    this.vy = -this.vy * 0.7; // Dampened bounce
-                    this.y = canvas.height - this.height; // Reposition object at bottom
-                }
-            }
-
-            draw() {
-                ctx.drawImage(this.image, this.x, this.y);
-            }
-        }
-
-        function startSimulation() {
-            objects.push(new FallingObject(200, 0, 'hand.png'));
-            objects.push(new FallingObject(400, 0, 'foot.png'));
-            objects.push(new FallingObject(600, 0, 'hand.png'));
-            objects.push(new FallingObject(300, 0, 'foot.png'));
-
-            animate();
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            objects.forEach(object => {
-                object.update();
-                object.draw();
-            });
-            requestAnimationFrame(animate);
-        }
-    </script>
+  <main>
+    <section>
+      <h2>Welcome</h2>
+      <p>This is my website.</p>
+    </section>
+  </main>
 </body>
 </html>
